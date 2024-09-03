@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tiro+Bangla&display=swap');
+
+*{
+    font-family: "Hind Siliguri", sans-serif;
+}
+
+.baksho{
+    margin-top: 10px;
+    position: relative;
+    text-align: center;
+}
+
+.baksho .content{
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+}
+
+.baksho .content.content-English{
+    display: block;
+}
+
+.check{
+    position: relative;
+    width: 50px;
+}
+
+.check:before{
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 25px;
+    background: #cf6679;
+    border-radius: 25px;
+}
+
+.check:checked:before
+{
+    background: #00a1ff;
+}
+
+.check:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    border-radius: 25px;
+    transition: 0.25s;
+    border: 2px solid #cf6679;
+    box-sizing: border-box;
+}
+
+.check:checked:after
+{
+    left: 25px;
+    border: 2px solid #00a1ff;
+}
+
+.check:checked ~ .content.content-English
+{
+    display: none;
+}
+
+.check:checked ~ .content.content-Bangla
+{
+    display: block;
+}
+
+.en{
+    color: #fff;
+}
+
+
+.bn{
+    color: #00a1ff;
+}
+
+
+.footer{
+    position: relative;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+html{
+    scroll-behavior: smooth;
+}
