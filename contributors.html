@@ -9,7 +9,9 @@
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    
+     <!-- Fontawesome CDN Link -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+
     <!-- Bootstrap CSS -->
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
@@ -30,7 +32,7 @@
 
 <!-- Start Navbar -->
 
-    <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-xl navbar-dark bg-dark" id="hudai">
         <div class="container-fluid" bis_skin_checked="1">
           <a class="navbar-brand fs-2 fw-bold" href="index.html"><span class="text-info">Q&A</span> HUB</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDark" aria-controls="navbarDark" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,115 +64,130 @@
 <!-- End Navbar -->
 
 
-      
-
-
-      <!-- PUT YOUR VALUABLE CODE HERE -->
-
-     <!--<div class="container">
-        <p>Experts</p>
-        <h1>Our Team Members</h1>
-</div>
-
-<div class="container h-100">
-  <div class="row gy-3 my-5">
-
-    <div class="col-sm-6 col-md-5 col-lg-3 mx-auto">
-      <div class="card text-center h-100 w-100">
-        <img src="./images/style-riaz.jpg" class="card-img-top img-fluid" style="width: 100%; height: 15vw; object-fit: cover;" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Shahriar Ahmed Riaz</h5>
-          <p class="info">Developer, Contributor</p>
-          <a href="portfolio/Riaz/riaz_pf.html" class="btn btn-primary">More Info</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-5 col-lg-3 mx-auto">
-      <div class="card text-center h-100 w-100">
-        <img src="images/style-akash.jpg" class="card-img-top img-fluid" style="width: 100%; height: 15vw; object-fit: cover;" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Akash Mondal</h5>
-          <p class="info">Contributor</p>
-          <a href="portfolio/Akash/akash_pf.html" class="btn btn-primary">More Info</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-5 col-lg-3 mx-auto">
-      <div class="card text-center h-100 w-100">
-        <img src="images/style-prince.jpg" class="card-img-top img-fluid" style="width: 100%; height: 15vw; object-fit: cover;" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Tameem Mehedi Prince</h5>
-          <p class="info">Contributor</p>
-          <a href="portfolio/Prince/prince_pf.html" class="btn btn-primary">More Info</a>
-        </div>
-      </div>
-    </div>
-
-     
-  </div>
-</div>
-
-
-<div class="about-section">
-  <h1>About Us Page</h1>
-  <p>Some text about who we are and what we do.</p>
-  <p>Resize the browser window to see that this page is responsive by the way.</p>
-</div>-->-->
-
-
 
 <!--new-->
 
 <div class="container">
-  <div class="row">
-      <div class="col-md-3 col-sm-6">
-          <div class="our-team">
-              <img src="./images/style-riaz.jpg" alt="amar pic">
-              <div class="team-content">
-                  <h3 class="title">Shahriar Ahmed Riaz</h3>
-                  <span class="post">Founder, Developer & Contributor</span>
-                  <ul class="social-links">
-                      <li><a href="#"><i class="fab fa-facebook"></i> </a></li>
-                      <li><a href="#"><i class="fab fa-twitter"></i> </a></li>
-                      <li><a href="#"><i class="fab fa-linkedin"></i> </a></li>
-                  </ul>
-              </div>
-          </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6">
-          <div class="our-team">
-              <img src="images/style-akash.jpg" alt="akash vai er pic">
-              <div class="team-content">
-                  <h3 class="title">Akash Mondal</h3>
-                  <span class="post">Contributor</span>
-                  <ul class="social-links">
-                      <li><a href="#"><i class="fab fa-facebook"></i> </a></li>
-                  </ul>
-              </div>
-          </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6">
-        <div class="our-team">
-            <img src="images/style-prince.jpg" alt="prince vai er pic">
-            <div class="team-content">
-                <h3 class="title">Tameem Mehedi Prince</h3>
-                <span class="post">Contributor</span>
-                <ul class="social-links">
-                  
-                    <li<i class='bx bxl-facebook-circle' ><a href="facebook.com/tmprince0"></a></i></li>
-                    <li><i class='bx bxl-linkedin'><a href="https://www.linkedin.com/in/tameem-mehedi-prince-8b1b70299?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"></a></i> </li>
-                </ul>
-            </div>
+    <input type="radio" name="dot" id="one">
+    <input type="radio" name="dot" id="two">
+    <div class="main-card">
+      <div class="cards">
+        <div class="card">
+         <div class="content">
+           <div class="img">
+            <img src="https://ahmed-shahriar04.github.io/qnahub/images/style-riaz.jpg" alt="">
+           </div>
+           <div class="details">
+             <div class="name">Shahriar Ahmed Riaz</div>
+             <div class="job">Founder & Developer</div>
+           </div>
+           <div class="media-icons">
+             <a href="https://www.facebook.com/shahriarahmed23" target="_blank"><i class="fab fa-facebook-f"></i></a>
+             <a href="https://x.com/ahmedshahriar04" target="_blank"><i class="fab fa-twitter"></i></a>
+             <a href="https://www.linkedin.com/in/shahriarahmedriaz/" target="_blank"><i class="fab fa-linkedin"></i></a>
+             <a href="#" target="_blank"><i class="fas fa-portrait"></i></a>
+           </div>
+         </div>
         </div>
+        <div class="card">
+         <div class="content">
+           <div class="img">
+            <img src="https://ahmed-shahriar04.github.io/qnahub/images/style-akash.jpg" alt="">
+           </div>
+           <div class="details">
+             <div class="name">Akash Mondal</div>
+             <div class="job">Contributor</div>
+           </div>
+           <div class="media-icons">
+             <a href="https://www.facebook.com/akash.akashmondal.7902" target="_blank"><i class="fab fa-facebook-f"></i></a>
+             <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+             <a href="#" target="_blank"><i class="fas fa-portrait"></i></a>
+           </div>
+         </div>
+        </div>
+        <div class="card">
+         <div class="content">
+           <div class="img">
+            <img src="https://ahmed-shahriar04.github.io/qnahub/images/style-prince.jpg" alt="">
+           </div>
+           <div class="details">
+             <div class="name">Tameem Mehedi Prince </div>
+             <div class="job">Contributor</div>
+           </div>
+           <div class="media-icons">
+             <a href="https://www.facebook.com/tmprince0" target="_blank"><i class="fab fa-facebook-f"></i></a>
+             <a href="https://www.linkedin.com/in/tameem-mehedi-prince-8b1b70299/" target="_blank"><i class="fab fa-linkedin"></i></a>
+             <a href="#" target="_blank"><i class="fas fa-portrait"></i></a>
+           </div>
+         </div>
+        </div>
+      </div>
+
+      <!--Extra cards-->
+
+      <!--<div class="cards">
+        <div class="card">
+         <div class="content">
+           <div class="img">
+             <img src="images/img4.jpg" alt="">
+           </div>
+           <div class="details">
+             <div class="name">Appolo Reef</div>
+             <div class="job">Web Designer</div>
+           </div>
+           <div class="media-icons">
+             <a href="#"><i class="fab fa-facebook-f"></i></a>
+             <a href="#"><i class="fab fa-twitter"></i></a>
+             <a href="#"><i class="fab fa-instagram"></i></a>
+             <a href="#"><i class="fab fa-youtube"></i></a>
+           </div>
+         </div>
+        </div>
+        <div class="card">
+         <div class="content">
+           <div class="img">
+             -<img src="images/img5.jpg" alt="">
+           </div>
+           <div class="details">
+             <div class="name">Adrina Calvo</div>
+             <div class="job">UI Designer</div>
+           </div>
+           <div class="media-icons">
+             <a href="#"><i class="fab fa-facebook-f"></i></a>
+             <a href="#"><i class="fab fa-twitter"></i></a>
+             <a href="#"><i class="fab fa-instagram"></i></a>
+             <a href="#"><i class="fab fa-youtube"></i></a>
+           </div>
+         </div>
+        </div>
+        <div class="card">
+         <div class="content">
+           <div class="img">
+             <img src="images/img6.jpeg" alt="">
+           </div>
+           <div class="details">
+             <div class="name">Nicole Lewis</div>
+             <div class="job">Web Devloper</div>
+           </div>
+           <div class="media-icons">
+             <a href="#"><i class="fab fa-facebook-f"></i></a>
+             <a href="#"><i class="fab fa-twitter"></i></a>
+             <a href="#"><i class="fab fa-instagram"></i></a>
+             <a href="#"><i class="fab fa-youtube"></i></a>
+           </div>
+         </div>
+        </div>
+      </div>-->
+
+
     </div>
 
-
+    
+    <div class="button">
+      <label for="one" class=" active one"></label>
+      <label for="two" class="two"></label>
+    </div>
   </div>
-</div>
 
 
       <!-- END PUT YOUR VALUABLE CODE HERE -->
@@ -192,7 +209,7 @@
         <div class="col-xs-12 col-sm-6 col-xl-3 order-0 order-xl-0">
           <div class="footer-logo-wrapper text-center text-sm-start">
             <a href="index.html">
-              <img src="images/logo-1-100.png" alt="BootstrapBrain Logo" width="80" height="80">
+              <img src="images/logo-1-100.png" alt="qnahub" width="80" height="80">
             </a>
           </div>
         </div>
