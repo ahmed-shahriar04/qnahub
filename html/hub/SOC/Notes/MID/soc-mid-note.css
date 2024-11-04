@@ -1,3 +1,13 @@
+
+html, body {
+    scroll-behavior: smooth;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+
 .title{
     margin-top: 50px;
     text-align: center;
@@ -35,8 +45,11 @@
     flex-grow: 1;
 }
 
+.container {
+    flex: 1;
+}
 
-
-html{
-    scroll-behavior: smooth;
+/* Footer styles */
+.footer {
+    text-align: center;
 }

@@ -52,6 +52,7 @@
 }
 
 .news{
+    margin-top: 10%;
     background: #0e3742;
 }
 
@@ -154,7 +155,11 @@
     color: antiquewhite;
 }
 
-.btn{
+.btn.xtra{
+    border-radius: 25px;
+    padding: 25px;
+    font-size: 25px;
+    margin-top: 105px;
     --box-shadow-color: black;
     box-shadow: 0 0 50px #007bff;
 }
