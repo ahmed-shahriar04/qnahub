@@ -20,7 +20,7 @@ body {
   height: 100vh;
   background-image: url("https://i.postimg.cc/9fkgsvy6/opt-2.png");
   background-repeat: no-repeat;
-  background-position: 60% 0%;
+  min-height: 500px;
   background-size: cover;
   background-attachment: fixed;
 }
