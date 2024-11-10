@@ -18,7 +18,7 @@ body {
 /* Hero section background image */
 .hero {
   height: 100vh;
-  background-image: url("https://scontent.fdac157-1.fna.fbcdn.net/v/t39.30808-6/330793011_1229738561235825_1212181573508949894_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=iwJnW4P37BwQ7kNvgEXampX&_nc_zt=23&_nc_ht=scontent.fdac157-1.fna&_nc_gid=AZ3604vOFei6Nb25RZFisc9&oh=00_AYDzXwLjUEhjEUkYfdQZaoXhW90XszMLTiKX3wgJC2hBGQ&oe=6720B3FC");
+  background-image: url("https://i.postimg.cc/9fkgsvy6/opt-2.png");
   background-repeat: no-repeat;
   background-position: 60% 0%;
   background-size: cover;
@@ -79,7 +79,7 @@ footer .social-icons a {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  background-image: url("https://scontent.fdac157-1.fna.fbcdn.net/v/t39.30808-6/292372815_1206152560179525_2178568554880492699_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=LnFM6VhgCHcQ7kNvgFcotMf&_nc_zt=23&_nc_ht=scontent.fdac157-1.fna&_nc_gid=AP2adSGuptYndyjwF4bsS70&oh=00_AYBhnUG49S__cVqQctMgCwof_D75IfMOeVdZzd_XFcP9jQ&oe=6720C739");
+  background-image: url("https://i.postimg.cc/rsRDQtq6/pexels-sora-shimazaki-5926397.jpg");
 }
 
 @media screen and (max-width: 990px) {
