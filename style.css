@@ -1,179 +1,418 @@
-@import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Tiro+Bangla:ital@0;1&family=Zain&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Tiro+Bangla&family=Zain:wght@200;300;400;700;800;900&display=swap');
-.title{
-    margin-top: 50px;
-    text-align: center;
-    font-family: "Rubik", sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&family=El+Messiri:wght@400..700&display=swap');
+/* Base */
+:root {
+  --clr-primary: #29a396;
 }
 
-.title h1{
-    font-family: "Calistoga", serif;
-    font-size: 70px;
-    letter-spacing: 7px;
-    color: #0e3742;
-    text-transform: uppercase;
-    -webkit-box-reflect: below 1px linear-gradient(transparent,#0004);
-    line-height: 0.70em;
-    outline: none;
-    animation: animate 5s linear infinite;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
 }
 
-@keyframes animate{
-    0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92%{
-        color: #0e3742;
-        text-shadow: none;
-    }
-    18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100%{
-        color: #fff;
-        text-shadow: 0 0 10px #03bcf4,
-        0 0 20px #03bcf4,
-        0 0 40px #03bcf4,
-        0 0 80px #03bcf4,
-        0 0 160px #03bcf4;
-    }
+html {
+  scroll-behavior: smooth;
 }
 
-.title-nb h5{
-    text-align: center;
-    background: rgb(10, 44, 107);
-    margin: 15px auto;
-    width: 30%;
-    padding: 15px;
-    border-radius: 25px;
-    font-family: "Tiro Bangla", serif;
-    font-size: 35px;
-    font-weight: bold;
-    color: #fff;
+/*logo start*/
+
+#logoMain{
+  text-decoration: none;
+  font-size: 35px;
 }
 
-.title-nb h5:hover{
-    background: red;
+#logoMain #qna{
+  color: #0DCAF0;
+  font-weight: bolder;
+  font-family: "Calistoga", serif;
 }
 
-.news{
-    margin-top: 10%;
-    background: #0e3742;
+#logoMain #hub{
+  color: white;
+  font-weight: bold;
 }
 
-.news p{
-    font-family: "Tiro Bangla", serif;
-    font-size: 25px;
-    color: #0aeaf1;
-    font-weight: bold;
-    margin-top: 20px;
+/*logo end*/
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(#111, #071a1a);
+  color: #fff;
+  overflow-x: hidden;
 }
 
-@media screen and (max-width: 780px)
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header,
+.section {
+  width: 100%;
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.header::after,
+.header::before,
+.section::after,
+.section::before {
+  content: "";
+  background: url(https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/blur-1.png);
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  bottom: 0;
+}
+
+.header::after {
+  left: -200px;
+}
+
+.header::before {
+  right: -200px;
+}
+
+.mb {
+  margin-bottom: 30px;
+}
+
+.mt {
+  margin-top: 20px;
+}
+
+.section {
+  background: #1d1f1e;
+  position: relative;
+  padding: 80px 0;
+}
+
+.section::after {
+  left: -200px;
+}
+
+.section::before {
+  width: 600px;
+  right: -200px;
+}
+
+.section:nth-child(even) {
+  background: #141615;
+}
+
+.section:nth-child(even)::after,
+.section:nth-child(even)::before {
+  display: none;
+}
+
+.primary {
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.secondary {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.tertiary {
+  font-size: 15px;
+}
+/* End Base */
+
+/* Menu */
+.menu {
+  width: 100%;
+  background: linear-gradient(to right, #0e0e0e 70%, #142d2a);
+  padding: 12px 0;
+}
+
+.menu .container {
+  justify-content: space-between;
+}
+
+.mobile-btn {
+  display: none;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.logo img {
+  width: 80px;
+  height: auto;
+}
+
+.nav {
+  list-style: none;
+}
+
+.nav-item {
+  display: inline-block;
+  margin-right: 30px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-item:hover a {
+  color: #29a396;
+  transition: 0.3s linear;
+}
+
+.nav-item:last-of-type {
+  margin-right: 0;
+}
+/* End Menu */
+
+/* Buttons */
+.btn {
+  padding: 10px 28px;
+  background: var(--clr-primary);
+  border-radius: 40px;
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: #165f56;
+  transition: 0.3s linear;
+}
+
+.btn-2 {
+  font-size: 35px;
+  text-decoration: none;
+  color: #ccc;
+  transition: 0.3s linear;
+}
+
+.btn-2:hover {
+  color: #29a396;
+}
+
+/* End Buttons */
+
+/* Header */
+.text {
+  width: 60%;
+}
+
+.visual {
+  width: 40%;
+}
+
+.visual img {
+  width: 100%;
+}
+
+.header h1 {
+  font-size: 70px;
+  font-weight: 700;
+}
+
+.header h1 span {
+  color: var(--clr-primary);
+}
+/* End Header */
+
+.section:nth-child(even) .visual {
+  margin-right: 30px;
+}
+
+/* Trainer */
+#trainer 
 {
-
-    .title{
-        margin-top: 50px;
-        text-align: center;
-        font-family: "Rubik", sans-serif;
-    }
-    
-    .title h1{
-        font-family: "Calistoga", serif;
-        font-size: 30px;
-        letter-spacing: 7px;
-        color: #0e3742;
-        text-transform: uppercase;
-        -webkit-box-reflect: below 1px linear-gradient(transparent,#0004);
-        line-height: 0.90em;
-        outline: none;
-        animation: animate 5s linear infinite;
-    }
-    
-    @keyframes animate{
-        0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92%{
-            color: #0e3742;
-            text-shadow: none;
-        }
-        18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100%{
-            color: #fff;
-            text-shadow: 0 0 10px #03bcf4,
-            0 0 20px #03bcf4,
-            0 0 40px #03bcf4,
-            0 0 80px #03bcf4,
-            0 0 160px #03bcf4;
-        }
-    }
-
-
-
-
-
-
-
-
-
-    .title-nb h5{
-        text-align: center;
-        background: rgb(10, 44, 107);
-        margin: 15px auto;
-        width: 54%;
-        padding: 15px;
-        border-radius: 25px;
-        font-family: "Tiro Bangla", serif;
-        font-size: 20px;
-        font-weight: bold;
-        color: #fff;
-    }
-    
-    .title-nb h5:hover{
-        background: red;
-    }
-    
-    .news{
-        background: #0e3742;
-    }
-    
-    .news p{
-        font-family: "Tiro Bangla", serif;
-        font-size: 25px;
-        color: #0aeaf1;
-        font-weight: bold;
-        margin-top: 20px;
-    } 
+  text-align: center;
 }
 
+.trainer img {
+  border-top-left-radius: 80px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 80px;
+  border-bottom-left-radius: 20px;
+  margin-bottom: 10px;
+  outline: 2px solid #fff;
+  padding: 14px;
+}
 
+.trainer .mb {
+  margin: 50px;
+  margin-bottom: 10px;
+}
+/* End Trainer */
 
-.title p{
-    font-family: "Calistoga", serif;
-    font-size: 25px;
-    font-weight: bold;
+/* Testimonial */
+#testimonial .visual img {
+  width: 90%;
+  display: block;
+  margin-left: auto;
+}
+
+.client {
+  background: #fff;
+  color: #000;
+  padding: 20px 10px;
+  margin-right: 20px;
+  text-align: center;
+  border-radius: 20px;
+  position: relative;
+  margin-top: 20px;
+}
+
+.client img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  top: -40px;
+  left: calc(50% - 40px);
+}
+
+.client h2 {
+  margin: 20px 0 10px 0;
+}
+/* End Testimonial */
+
+/* Discount */
+#discount {
+  padding: 40px 0;
+}
+/* End  Discount */
+
+/* Footer */
+.footer {
+  padding: 30px 0;
+  border-top: 1px solid #fff;
+  text-align: center;
+}
+/* End Footer */
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .flex {
+    flex-direction: column;
     text-align: center;
-    color: bisque;
-}
+  }
 
-.para p{
-    font-family: "Calistoga", serif;
-    font-size: 20px;
-    text-align: center;
-    color: antiquewhite;
-}
-
-.btn.xtra{
-    border-radius: 25px;
-    padding: 25px;
-    font-size: 25px;
-    margin-top: 105px;
-    --box-shadow-color: black;
-    box-shadow: 0 0 50px #007bff;
-}
-
-
-.footer{
+  .mobile-btn {
+    display: block;
+    font-size: 35px;
+    cursor: pointer;
     position: absolute;
-    right: 0;
-    left: 0;
-    bottom: 0;
+    right: 20px;
+    top: 12px;
+  }
+
+  .menu.active .nav-item {
+    display: block;
+    margin: 30px 0;
+  }
+
+  .nav,
+  .menu .btn {
+    display: none;
+  }
+
+  .menu.active .nav,
+  .menu.active .btn {
+    display: block;
+  }
+
+  .menu.active {
+    padding: 30px 0;
     width: 100%;
-    height: 10%;
+    transition: all 0.8s ease;
+  }
+
+  .text,
+  .visual {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .text h1 {
+    font-size: 45px;
+  }
+
+  .primary {
+    font-size: 28px;
+  }
+
+  .secondary {
+    font-size: 22px;
+  }
+
+  .tertiary {
+    font-size: 14px;
+  }
+
+  .trainer {
+    margin-bottom: 20px;
+  }
+
+  .client {
+    margin-bottom: 50px;
+  }
+
+  #discount .visual img {
+    width: 70%;
+    margin-bottom: 30px;
+  }
 }
 
-html{
-    scroll-behavior: smooth;
+@media (max-width: 530px) {
+  .header::after,
+  .header::before,
+  .section::after,
+  .section::before {
+    display: none;
+  }
+
+  .primary {
+    font-size: 25px;
+  }
+
+  .secondary {
+    font-size: 20px;
+  }
+
+  .tertiary {
+    font-size: 12px;
+  }
+
+  .text h1 {
+    font-size: 34px;
+  }
+
+  .btn,
+  .btn-2 {
+    font-size: 16px;
+  }
 }
+
+/* End Responsive */
