@@ -174,11 +174,13 @@ body {
 .nav-item a {
   text-decoration: none;
   color: #fff;
+  transition: all 0.2s ease;
 }
 
-.nav-item:hover a {
+.nav-item a:hover {
   color: #29a396;
-  transition: 0.3s linear;
+  transition: 0.1s linear;
+  border-bottom: 4px solid #165f56;
 }
 
 .nav-item:last-of-type {
@@ -249,7 +251,18 @@ body {
   text-align: center;
 }
 
+.trainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.trainer a{
+    font-size: 50px;
+}
+
 .trainer img {
+    width: 90%;
   border-top-left-radius: 80px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 80px;
@@ -375,6 +388,10 @@ body {
     margin-bottom: 20px;
   }
 
+  .trainer a{
+    font-size: 40px;
+  }
+
   .client {
     margin-bottom: 50px;
   }
@@ -416,3 +433,23 @@ body {
 }
 
 /* End Responsive */
+
+.text a{
+    transition: all 0.3s ease;
+}
+
+.text a:hover{
+    transform: translateX(10px);
+    background-color: darkorange;
+    color: #071a1a;
+    font-weight: bolder;
+}
+
+#preloader{
+  background: #fff url(loading.gif) no-repeat center center;
+  background-size: 100%;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
