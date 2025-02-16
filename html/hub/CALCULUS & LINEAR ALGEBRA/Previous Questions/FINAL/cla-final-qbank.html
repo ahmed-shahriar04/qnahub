@@ -318,6 +318,8 @@
             const selectedPdf = pdfSelector.value;
             const selectedPdfName = pdfSelector.options[pdfSelector.selectedIndex].text;
 
+            console.log("Selected PDF Path:", selectedPdf); // Debugging line
+
             // Append #toolbar=0 to the PDF URL to hide the toolbar
             pdfViewer.src = selectedPdf + "#toolbar=0";
             pdfName.textContent = selectedPdfName;
