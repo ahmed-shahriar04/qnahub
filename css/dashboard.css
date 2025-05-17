@@ -36,60 +36,56 @@ body{
     transition: background-color 0.3s, color 0.3s;
 }
 
-.header{
+/* Original .header code (unchanged) */
+.header {
     width: 87%;
     position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
-background: rgba(255, 255, 255, 0.12);
-border-radius: 12px;
-border-top-left-radius: 0px;
-border-top-right-radius: 0px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(4.4px);
--webkit-backdrop-filter: blur(4.4px);
-border: 1px solid rgba(255, 255, 255, 0.31);
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.4px);
+    -webkit-backdrop-filter: blur(4.4px);
+    border: 1px solid rgba(255, 255, 255, 0.31);
     padding: 15px;
     margin-left: 13%;
     border-bottom: 2px solid rgba(128, 128, 128, 0.377);
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-    .header {
-        width: 85%;
-        margin-left: 15%;
-    }
-}
-
+/* Adjustments via media queries (no changes to .header) */
 @media (max-width: 992px) {
+    /* When sidebar disappears */
     .header {
-        width: 83%;
-        margin-left: 17%;
+        width: 100% !important; /* Force full width */
+        margin-left: 0 !important; /* Remove left margin */
+        border-radius: 0 !important; /* Optional: Remove rounded corners */
+    }
+
+    /* Adjust search bar width */
+    input[type="text"] {
+        width: 50% !important;
     }
 }
 
 @media (max-width: 768px) {
-    .header {
-        width: 80%;
-        margin-left: 20%;
+    /* Further adjustments for smaller screens */
+    input[type="text"] {
+        width: 70% !important;
     }
 }
 
 @media (max-width: 576px) {
-    .header {
-        width: 75%;
-        margin-left: 25%;
-        padding: 10px 15px;
+    /* Mobile adjustments */
+    input[type="text"] {
+        width: 80% !important;
     }
-}
 
-@media (max-width: 400px) {
-    .header {
-        width: 70%;
-        margin-left: 30%;
-        padding: 8px 12px;
+    .header .headTitle {
+        font-size: 24px !important; /* Optional: Reduce title size */
     }
 }
 
