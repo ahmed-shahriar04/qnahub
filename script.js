@@ -36,6 +36,6 @@ function RedirectToLoginPage() {
   
   // Redirect after 1 second (1000ms)
   setTimeout(() => {
-    window.location.href = "#dashboard er link hobe";
+    window.location.href = "https://ahmed-shahriar04.github.io/qnahub/html/dashboard.html";
   }, 1000);
 }
