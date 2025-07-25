@@ -1,144 +1,418 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QNA HUB by Riaz</title>
-     <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/KckLkvQC/01.png" sizes="76*76">
-     
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>QNA HUB - No Longer Available</title>
+    
+    <!-- Google Fonts: Poppins for body, Roboto Mono for a techy feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* --- CSS Reset & Basic Setup --- */
+        :root {
+            --bg-color: #f0f2f5;
+            --text-color: #1c1e21;
+            --header-bg: #ffffff;
+            --card-bg: #ffffff;
+            --primary-color: #ff6347; /* Tomato color for a more fun vibe */
+            --primary-hover: #e5533d;
+            --secondary-color: #6c757d;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --ghost-color: #aab2bd;
+            --ghost-shadow: rgba(0, 0, 0, 0.15);
+            --toggle-bg: #dcdcdc;
+            --toggle-fg: #ffffff;
+            --toggle-icon: "☀️";
+        }
+
+        html[data-theme='dark'] {
+            --bg-color: #121212;
+            --text-color: #e4e6eb;
+            --header-bg: #1e1e1e;
+            --card-bg: #1e1e1e;
+            --primary-color: #ff7f50; /* Coral */
+            --primary-hover: #ff6a36;
+            --secondary-color: #b0b3b8;
+            --shadow-color: rgba(0, 0, 0, 0.5);
+            --ghost-color: #7f8c8d;
+            --ghost-shadow: rgba(255, 255, 255, 0.1);
+            --toggle-bg: #555;
+            --toggle-fg: #1e1e1e;
+            --toggle-icon: "🌙";
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+            overflow-x: hidden;
+        }
+
+        /* --- Header / Navbar --- */
+        .navbar {
+            background-color: var(--header-bg);
+            box-shadow: 0 2px 10px var(--shadow-color);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .navbar .logo {
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .navbar a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+
+        .navbar a:hover {
+            background-color: var(--bg-color);
+        }
+
+        /* --- Theme Toggle Switch --- */
+        .theme-switch-wrapper {
+            display: flex;
+            align-items: center;
+        }
+        .theme-switch {
+            display: inline-block;
+            height: 34px;
+            position: relative;
+            width: 60px;
+        }
+        .theme-switch input {
+            display:none;
+        }
+        .slider {
+            background-color: var(--toggle-bg);
+            bottom: 0;
+            cursor: pointer;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            background-color: var(--toggle-fg);
+            bottom: 4px;
+            content: var(--toggle-icon);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 26px;
+            left: 4px;
+            position: absolute;
+            transition: .4s;
+            width: 26px;
+            border-radius: 50%;
+            font-size: 14px;
+        }
+        input:checked + .slider {
+            background-color: var(--toggle-bg);
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        /* --- Main Content --- */
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 90%;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-color);
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px var(--shadow-color);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, var(--primary-color), #ffcc00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.25rem;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+        }
+
+        .description {
+            color: var(--secondary-color);
+            margin-bottom: 2.5rem;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        /* --- Ghost Animation --- */
+        .ghost-container {
+            width: 150px;
+            height: 150px;
+            margin: 20px auto 30px;
+            position: relative;
+        }
+
+        .ghost {
+            color: var(--ghost-color);
+            font-size: 8rem;
+            animation: floatGhost 4s ease-in-out infinite;
+            transition: color 0.3s;
+        }
+
+        .ghost-shadow {
+            width: 70%;
+            height: 20px;
+            background: var(--ghost-shadow);
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            left: 15%;
+            filter: blur(5px);
+            animation: shrinkShadow 4s ease-in-out infinite;
+            transition: background 0.3s;
+        }
+        
+        @keyframes floatGhost {
+            0%, 100% {
+                transform: translateY(0) rotate(-5deg);
+            }
+            50% {
+                transform: translateY(-30px) rotate(5deg);
+            }
+        }
+        
+        @keyframes shrinkShadow {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(0.6);
+                opacity: 0.3;
+            }
+        }
+
+        /* --- Image Button --- */
+        .image-button-link {
+            display: inline-block;
+            margin-top: 1rem;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .image-button-link img {
+            width: 250px;
+            height: auto;
+            border: none;
+        }
+
+        .image-button-link:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* --- Footer --- */
+        .footer {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            background-color: var(--header-bg);
+            border-top: 1px solid var(--shadow-color);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            .subtitle {
+                font-size: 1rem;
+            }
+            .container {
+                padding: 30px 20px;
+            }
+            .ghost-container {
+                width: 120px;
+                height: 120px;
+            }
+            .ghost {
+                font-size: 6rem;
+            }
+            .image-button-link img {
+                width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .subtitle {
+                font-size: 0.9rem;
+            }
+            .container {
+                padding: 20px 15px;
+            }
+            .ghost-container {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 20px;
+            }
+            .ghost {
+                font-size: 5rem;
+            }
+            .image-button-link img {
+                width: 180px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="page-container">
 
-   
-    <header>
-        <div class="headerItems" id="headerItems">
-            
-            <div class="logo-name" id="logo-name">
-                <img src="https://i.postimg.cc/KckLkvQC/01.png" alt="no image">
-            </div>
-
-            <div class="sectionItems" id="sectionItems">
-
-                <ul>
-                    <li><a href="https://ahmed-shahriar04.github.io/qnahub/html/contact.html">Massage Us</a></li>
-                    <li><a href="https://ahmed-shahriar04.github.io/qnahub/contributors.html">Contributors</a></li>
-                    <li><a href="https://ahmed-shahriar04.github.io/qnahub/html/about.html">About Us</a></li>
-                </ul>
-
-            </div>
-
-            <div class="head-sideItems" id="head-sideItems">
-
-                <ul>
-                    <li>
-                        <button class="btn-head" id="btn-head" type="button" onclick="RedirectToLoginPage()">Explore</button>
-                    </li>
-
-                    <div class="dark-mode-toggle">
-                        <input type="checkbox" id="darkModeToggle" class="toggle-checkbox">
-                        <label for="darkModeToggle" class="toggle-label">
-                            <i class="fa-solid fa-sun"></i>
-                            <i class="fa-solid fa-moon" style="color: #ffffff;"></i>
-                            <span class="toggle-ball"></span>
-                        </label>
-                    </div>
-                </ul>
+    <header class="navbar">
+        <a href="#" class="logo">QNA HUB</a>
+        <div class="nav-links">
+            <a href="/index.html">The New Place: Learnix!</a>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider"></div>
+                </label>
             </div>
         </div>
     </header>
 
-    <hr id="line">
-
-    <div class="container">
-        <h3 class="api-title">---Study Materials---</h3>
-
-        <h1 class="bigTxt"> <span style="color: #055DFE;">Study</span> Smarter With Our Resources</h1>
-
-        <h6 class="descriptionTxt">Discover the key to academic success. Visit QNA HUB today!</h6>
-
-        <div class="items">
-            <div class="itemBoxes" id="itemBoxes">
-                <div class="singleItem" id="singleItem">
-                    <img src="./images/rinaz-glassmorphism-icons-main/rinaz-glassmorphism-icons-main/svg/file-glass.svg" alt="">
-                    <p>Notes</p>
-                </div>
-
-                <div class="singleItem" id="singleItem">
-                    <img src="./images/rinaz-glassmorphism-icons-main/rinaz-glassmorphism-icons-main/svg/commits-glass.svg" alt="">
-                    <p>Questions</p>
-                </div>
-
-                <div class="singleItem" id="singleItem">
-                    <img src="./images/rinaz-glassmorphism-icons-main/rinaz-glassmorphism-icons-main/svg/trending-glass.svg" alt="">
-                    <p>Solutions</p>
-                </div>
-
-                <div class="singleItem" id="singleItem">
-                    <img src="./images/rinaz-glassmorphism-icons-main/rinaz-glassmorphism-icons-main/svg/star-glass.svg" alt="">
-                    <p>Skills</p>
-                </div>
-
-                <div class="singleItem" id="singleItem">
-                    <img src="./images/rinaz-glassmorphism-icons-main/rinaz-glassmorphism-icons-main/svg/folder-glass.svg" alt="">
-                    <p>Resources</p>
-                </div>
+    <main class="main-content">
+        <div class="container">
+            <div class="ghost-container">
+                <div class="ghost"><i class="fa-solid fa-ghost"></i></div>
+                <div class="ghost-shadow"></div>
             </div>
+
+            <h1>We've Moved!</h1>
+            <p class="subtitle">This Page is Officially a Ghost Town</p>
+            <p class="description">
+                All the brilliant questions and answers from <b>QNA HUB</b> have packed their digital bags and moved to a new, shinier home at the <b>Learnix</b> website. This corner of the internet is now retired and enjoying its spooky new status. Click the Learnix logo to go new home.
+            </p>
+            <a href="/index.html" class="image-button-link">
+                <!-- A self-contained image using a Data URI -->
+                <img src="/images/logo1.png" alt="Visit Learnix Now!">
+            </a>
         </div>
+    </main>
 
-        <div class="button" id="button" onclick="RedirectToLoginPage()">
-  Get Started - It's Free
-</div>
+    <footer class="footer">
+        © 2025 QNA HUB. Gone but not forgotten. (Mostly.)
+    </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('checkbox');
+            const currentTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-        <div class="offer" id="offer">
-            <ul>
-                <li><i class="fa-solid fa-check"></i> Free SignUp</li>
-                <li><i class="fa-solid fa-check"></i> No Credit Card Required</li>
-                <li><i class="fa-solid fa-check"></i> Cancel Anytime</li>
-            </ul>
-        </div>
-    </div>
-</div>
+            // Function to set the theme
+            function setTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+                if (theme === 'dark') {
+                    themeToggle.checked = true;
+                } else {
+                    themeToggle.checked = false;
+                }
+            }
 
-    
+            // Determine initial theme
+            if (currentTheme) {
+                // Use saved theme
+                setTheme(currentTheme);
+            } else if (prefersDark) {
+                // Use system preference
+                setTheme('dark');
+            } else {
+                // Default to light
+                setTheme('light');
+            }
 
-    <footer>
-            <div class="footHead">
-              <img src="https://i.postimg.cc/KckLkvQC/01.png" alt="logo" />
+            // Add event listener for the toggle
+            themeToggle.addEventListener('change', () => {
+                if (themeToggle.checked) {
+                    setTheme('dark');
+                } else {
+                    setTheme('light');
+                }
+            });
 
-              <div class="downLink">
-                <a href="#"><img src="images/get it on google play.svg" alt="Gplay" /></a>
-              </div>
-            </div>
-
-            <div class="middleFoot">
-              <p class="footDes">Prepare like a pro for exams. Explore what QNA HUB offers!</p>
-              <ul>
-                <a href="#"><li>Homepage</li></a>
-                <a href="https://ahmed-shahriar04.github.io/qnahub/contributors.html"><li>Contributors</li></a>
-                <a href="https://ahmed-shahriar04.github.io/qnahub/html/about.html"><li>About Us</li></a>
-                <a href="https://ahmed-shahriar04.github.io/qnahub/html/contact.html"><li>Message Us</li></a>
-              </ul>
-            </div>
-
-            <hr />
-
-            <div class="footDownItems">
-              <p class="copy">Copyright 2025 &copy; <a href="#">CODIOLOGY</a>. All Rights Reserved.</p>
-
-              <ul class="footIC">
-                <a href="#"><li><i class="fa-brands fa-facebook fb"></i></li></a>
-                <a href="#"><li><i class="fa-brands fa-linkedin link"></i></li></a>
-                <a href="#"><li><i class="fa-solid fa-user-tie dev"></i></li></a>
-                <a href="#"><li><i class="fa-solid fa-c codio"></i></li></a>
-              </ul>
-            </div>
-          </footer>
-
-    <script src="app.js"></script>
-
+            // Listen for changes in system preference
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+                const newColorScheme = e.matches ? 'dark' : 'light';
+                // Only change if the user hasn't manually set a theme
+                if (!localStorage.getItem('theme')) {
+                   setTheme(newColorScheme);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
