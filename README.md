@@ -3,7 +3,7 @@ QNA HUB by Shahriar Ahmed Riaz...
 This is a website for collection of notes, previous questions, sollution, resources and so on.
 
 To view click this link:
-https://ahmed-shahriar04.github.io/qnahub/index.html
+https://learnix-web.netlify.app/
 
 New Features: 
 
